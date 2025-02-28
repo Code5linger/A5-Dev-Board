@@ -13,6 +13,15 @@ function formatDate() {
 
 formatDate();
 
+function checkTaskProgress() {
+  const taskProgress = document.querySelector('.taskProgress');
+  let progressCount = parseInt(taskProgress.textContent, 10);
+
+  if (progressCount === 0) {
+    alert('Congrats');
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const taskCounter = document.querySelector('.totalTasks');
   const assignedCounter = document.querySelector('.taskProgress');
@@ -61,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         activityLog.appendChild(logEntry);
       }
       alert('Board Updated Successfully!');
+      checkTaskProgress();
     });
   });
 });
