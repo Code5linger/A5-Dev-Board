@@ -14,13 +14,13 @@ function formatDate() {
 formatDate();
 
 document.addEventListener('DOMContentLoaded', () => {
-  const taskCounter = document.querySelector('.totalTasks'); // Counter in nav
-  const assignedCounter = document.querySelector('.taskProgress'); // Task Assigned counter
-  const activityLog = document.querySelector('.activity-log'); // Activity log container
+  const taskCounter = document.querySelector('.totalTasks');
+  const assignedCounter = document.querySelector('.taskProgress');
+  const activityLog = document.querySelector('.activity-log');
   const buttons = document.querySelectorAll('.completed');
 
-  let assignedCount = parseInt(assignedCounter.textContent, 10); // Get initial assigned count
-  let progressCount = parseInt(taskCounter.textContent, 10); // Get initial progress count
+  let assignedCount = parseInt(assignedCounter.textContent, 10);
+  let progressCount = parseInt(taskCounter.textContent, 10);
 
   buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -35,12 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
         button.disabled = true;
         button.classList.add('opacity-50', 'cursor-not-allowed');
 
-        // Get task title (h2 inside the same card)
         const taskTitle = button
           .closest('.p-4')
           .querySelector('h2').textContent;
 
-        // Get current time
         const now = new Date();
         const timeString = now.toLocaleTimeString([], {
           hour: '2-digit',
@@ -49,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
           hour12: true,
         });
 
-        // Create log entry
         const logEntry = document.createElement('p');
         logEntry.textContent = `You have completed the task "${taskTitle}" at ${timeString}`;
         logEntry.classList.add(
@@ -61,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
           'mb-7'
         );
 
-        // Append log entry to the activity log
         activityLog.appendChild(logEntry);
       }
     });
