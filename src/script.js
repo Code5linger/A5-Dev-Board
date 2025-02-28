@@ -94,3 +94,12 @@ document.addEventListener('DOMContentLoaded', () => {
     themeButton.style.transform = `rotate(${rotation}deg)`;
   });
 });
+
+function clearActivityLog() {
+  const activityLog = document.querySelector('.activity-log');
+  activityLog.innerHTML = ''; // Clears all contents of the activity log
+}
+
+document
+  .querySelector('.clearHistoryButton')
+  .addEventListener('click', clearActivityLog);
