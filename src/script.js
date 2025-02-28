@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         activityLog.appendChild(logEntry);
       }
+      alert('Board Updated Successfully!');
     });
   });
 });
