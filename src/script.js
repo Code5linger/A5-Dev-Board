@@ -18,7 +18,7 @@ function checkTaskProgress() {
   let progressCount = parseInt(taskProgress.textContent, 10);
 
   if (progressCount === 0) {
-    alert('Congrats');
+    alert('Congrates!!! You have completed all the current task');
   }
 }
 
